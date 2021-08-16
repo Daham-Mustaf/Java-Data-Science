@@ -46,6 +46,17 @@ public class DataStatistcAnalysis {
          */
         //Creating the table with the columns that will be used for the scatter plot
 
+        Table theScatterData =Table.create("theScatterData",age,bmi);
+        Figure scatterFigure = ScatterPlot.create("Age by BMI ", theScatterData, "Age", "Bmi");
+        Plot.show(scatterFigure);
+
+        //Creating a heatMap of  of the dataset
+        // dropping the sex Column and creating a heatmap
+        Figure theHeatMap = Heatmap.create("Correlation of the different variables ",
+                diabetesData,"Age","Bmi");
+                Plot.show(theHeatMap);
+
+
     }
 
     }

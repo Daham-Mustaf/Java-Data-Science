@@ -13,7 +13,7 @@
 			<version>LATEST</version>
 		</dependency>
 	</dependencies>
-	
+
 	<build>
 		<sourceDirectory>src</sourceDirectory>
 		<plugins>
