@@ -2,8 +2,11 @@ package dataHandling;
 
 import java.io.IOException;
 import tech.tablesaw.api.DoubleColumn;
+import tech.tablesaw.api.NumberColumn;
 import tech.tablesaw.api.StringColumn;
 import tech.tablesaw.api.Table;
+import tech.tablesaw.columns.Column;
+import tech.tablesaw.selection.Selection;
 
 public class DataObject {
 
@@ -75,6 +78,30 @@ public class DataObject {
 		System.out.println("Last rows of the table");
 		Table tableTail = dataTable.last(3);
 		System.out.println(tableTail);
+
+		/**
+		 * Section 2.4 , Filtering unwanted  data
+		 */
+
+		// printing the structure of the table to identify the columns that we would like to remove
+		System.out.println(dataTable.columnNames());
+
+
+		//Creating a table from the loaded data set
+		Table filteredTable = dataTable.select( "satisfaction_level", "last_evaluation", "left", "promotion_last_5years");
+		System.out.println("the selected columns are: "+ filteredTable.columnNames());
+
+		// Want table which fits a specific criteria
+		//EXAMPLe: All employees whose has high salary.
+
+		Table filteredSalary = dataTable.where(dataTable.stringColumn("salary").isEqualTo("high"));
+		System.out.println("the high salary is "+ filteredSalary);
+		//Accessing the first 5 rows of the filteredSalary.
+		System.out.println("Printing the first rows of the filteredSalary");
+		Table tableHead2 = filteredSalary.first(5);
+		System.out.println(tableHead2);
+
+
 
 
 
