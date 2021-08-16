@@ -5,6 +5,7 @@ import tech.tablesaw.api.Table;
 import java.io.IOException;
 import java.io.InputStream;
 import java.net.URL;
+import java.sql.*;
 
 public class LoadingData {
 
@@ -41,6 +42,37 @@ public class LoadingData {
         Table streamStructure = hrDataTable.structure();
         System.out.println("the output from the API"+ streamStructure);
 
+
+        /**
+         *  Getting the data from  mysql database USING JDBC
+         *  a table in my local database
+         *  Database Name : Test
+         *  Table Name : Person
+         */
+
+        String DB_URL = "jdbc:mysql://localhost:3306/Test";
+        Connection conn= null;
+        try {
+            conn = DriverManager.getConnection(DB_URL,"root","");
+        } catch (SQLException e) {
+            e.printStackTrace();
         }
+
+        Table DBcustomers = null;
+        try (Statement myStament = conn.createStatement()) {
+            String sql = "SELECT * FROM Customer";
+            try (ResultSet results = myStament.executeQuery(sql)) {
+                DBcustomers = Table.read().db(results, "Person");
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+        Table DBstructure = DBcustomers.structure();
+        System.out.println(DBstructure);
+        System.out.println("This two are good , off to streaming");
+
+        }
+
     }
 
