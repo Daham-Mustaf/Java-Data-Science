@@ -16,7 +16,7 @@ public class DataObject {
 		/*
 		 * loading the data file.
 		 */
-		Table dataTable = Table.read().csv("/Users/m-store/eclipse-workspace/DataAnalytics/HR_comma_sep.csv");
+		Table dataTable = Table.read().csv("/Users/m-store/eclipse-workspace/DataAnalysis/HR_comma_sep.csv");
 
 
 		/**
@@ -105,6 +105,13 @@ public class DataObject {
 				dataTable.doubleColumn("satisfaction_level").isGreaterThan(0.5)
 						.and(dataTable.stringColumn("sales").isEqualTo("hr")));
 		//System.out.println(filtered);
+
+		/**
+		 * Handling the Null and the NAN data
+		 */
+
+		//Removing Columns with Missing data but may be it is unwanted.
+		//dataTable.removeColumnsWithMissingValues();
 
 
 
