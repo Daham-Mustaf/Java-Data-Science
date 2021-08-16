@@ -121,8 +121,6 @@ public class DataObject {
 		List<Double>  satisfaction_level = new ArrayList<Double>();
 		List<Double>  last_evaluation = new ArrayList<Double>();
 		List<Integer>  number_project = new ArrayList<Integer>();
-		List<Integer>  average_montly_hours = new ArrayList<Integer>();
-		List<Integer>  time_spend_company = new ArrayList<Integer>();
 		List<String>  sales = new ArrayList<String>();
 		List<String>  salary= new ArrayList<String>();
 

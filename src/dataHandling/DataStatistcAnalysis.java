@@ -4,7 +4,7 @@ import tech.tablesaw.api.NumberColumn;
 import tech.tablesaw.api.Table;
 import static tech.tablesaw.aggregate.AggregateFunctions.*;
 import java.io.IOException;
-import tech.tablesaw.plotly.api.ScatterPlot;
+
 
 
 import static tech.tablesaw.aggregate.AggregateFunctions.*;
