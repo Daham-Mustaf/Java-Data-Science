@@ -1,10 +1,12 @@
 package dataHandling;
 
 import java.io.IOException;
-import tech.tablesaw.api.DoubleColumn;
-import tech.tablesaw.api.NumberColumn;
-import tech.tablesaw.api.StringColumn;
-import tech.tablesaw.api.Table;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+
+import org.apache.commons.math3.analysis.interpolation.LinearInterpolator;
+import tech.tablesaw.api.*;
 import tech.tablesaw.columns.Column;
 import tech.tablesaw.selection.Selection;
 
@@ -113,13 +115,84 @@ public class DataObject {
 		//Removing Columns with Missing data but may be it is unwanted.
 		//dataTable.removeColumnsWithMissingValues();
 
+		//Removing Rows holding missed data based on specific columns. by iterating over our data.
+		//Creating variables of typ arrays to Hold columns.
+		List<String> name = new ArrayList<>();
+		List<Double>  satisfaction_level = new ArrayList<Double>();
+		List<Double>  last_evaluation = new ArrayList<Double>();
+		List<Integer>  number_project = new ArrayList<Integer>();
+		List<Integer>  average_montly_hours = new ArrayList<Integer>();
+		List<Integer>  time_spend_company = new ArrayList<Integer>();
+		List<String>  sales = new ArrayList<String>();
+		List<String>  salary= new ArrayList<String>();
 
+		//To be used for interpolation, double arrays
+		double [] satisfaction_level_raw = new double [20];
+		double [] last_evaluation_raw = new double [20];
+		int index =0;
 
+		//Iterating over the table to remove the rows with NANs
+		for (Row row : dataTable) {
+			//Extract data in the row
+			Double satisfaction_levelS = row.getDouble("satisfaction_level");
+			Double last_evaluationS = row.getDouble("last_evaluation");
+			String salesS= row.getString("sales");
+			String salaryS = row.getString("salary");
 
+			System.out.println("The SL" + satisfaction_levelS );
+			System.out.println("The LE is " +last_evaluationS);
+			System.out.println("The sale is " +salesS);
+			System.out.println("The salary is " + salaryS);
 
+			// the case of (Integer & Double) size !=0
+			// for the case of String length()!=0
+			if(salesS.length()!=0 && salaryS.length()!=0 && satisfaction_levelS!=0 && last_evaluationS!=0) {
+				// adding the filtered date set to the list.
+				satisfaction_level.add(satisfaction_levelS);
+				last_evaluation.add(last_evaluationS);
+				sales.add(salesS);
+				salary.add(salaryS);
+			}
 
+			else {
 
-	}
+			}
+			//Adding the data for Interpolation
+			satisfaction_level_raw[index] =satisfaction_levelS;
+			last_evaluation_raw[index]=last_evaluationS;
+			index++;
+		}
+
+		//Creating columns to store the variables:
+		String[] sallaryArr =salary.toArray(new String[satisfaction_level.size()]);
+		StringColumn salry = StringColumn.create("salry",sallaryArr);
+		//Adding the columns to the table
+		Table droppedRows =Table.create("DroppedRows",salry);
+
+		//compare newly created table from filtered data with th original data
+		String tableShape2 = droppedRows.shape();
+		String tableShape1 = dataTable.shape();
+		System.out.println(tableShape2);
+		System.out.println(tableShape);
+	    // Linear Interpolation
+	    // data over time increasing or decreasing
+	    //Satisfaction Level (y) depends on Last Evaluation(X)
+	    LinearInterpolator myLinearInterp = new LinearInterpolator();
+	    myLinearInterp.interpolate(satisfaction_level_raw, last_evaluation_raw);
+	    /**
+        *Formatting various data types
+		 */
+
+		//Getting the table structures
+		System.out.println("Printing the structure of the table  loaded from my local machine");
+		Table tableDataType = dataTable.structure();
+		System.out.println(tableDataType);
+
+		//Incase of Arrays with Int to double
+		int[] age = {30, 12, 14, 41, 20, 80};
+		double[] double_age = Arrays.stream(age).asDoubleStream().toArray();
 }
+}
+
 
 
