@@ -80,7 +80,7 @@ public class DataObject {
 		System.out.println(tableTail);
 
 		/**
-		 * Section 2.4 , Filtering unwanted  data
+		 * Filtering unwanted  data
 		 */
 
 		// printing the structure of the table to identify the columns that we would like to remove
@@ -100,6 +100,12 @@ public class DataObject {
 		System.out.println("Printing the first rows of the filteredSalary");
 		Table tableHead2 = filteredSalary.first(5);
 		System.out.println(tableHead2);
+
+		Table filtered = dataTable.where(
+				dataTable.doubleColumn("satisfaction_level").isGreaterThan(0.5)
+						.and(dataTable.stringColumn("sales").isEqualTo("hr")));
+		//System.out.println(filtered);
+
 
 
 
