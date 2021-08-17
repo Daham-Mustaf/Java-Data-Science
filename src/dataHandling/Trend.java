@@ -122,48 +122,48 @@ public class Trend {
 	}
 
 	public static void main(String[] args) throws IOException {
-//        //Trend myTrend = new Trend();
-//        Table bitconPriceData = Table.read().csv("/Users/m-store/eclipse-workspace/DataAnalysis/Bitcoin-usd.csv");
-//        Table bitprice = bitconPriceData.structure();
-//        System.out.println(bitprice);
-//
-//        //Time series data trend Analysis
-//        // create(title, TableData, key Features x & y axis).
-//        // Plot.show prints out the plot
-//        Plot.show(TimeSeriesPlot
-//                .create("Bitcoin Exchange Prices in USD", bitconPriceData, "Date", "High"));
-//
-//         /*
-//         * Visualizing different data forms
-//         * Text (Word cloud)
-//         * Number (bar charts)
-//         */
-//
-//         //Creating Bar Charts
-//        Table diabetesData = Table.read().csv("/Users/m-store/eclipse-workspace/DataAnalysis/diabetes.csv");
-//        Table diabetes = diabetesData.structure();
-//        System.out.println(diabetes);
-//        Table ageAverage = diabetesData.summarize("Age", mean).by("Outcome");
-//        Plot.show(
-//                HorizontalBarPlot.create(
-//                        " Average Age by Outcome",		    // plot title
-//                        ageAverage,				                // Calculated averages of the age
-//                        "Outcome",					// grouping column name
-//                        "mean [Age]"));
-//
-//         //Showcase AVG BMI by Age
-//        Table bmiAverage = diabetesData.summarize("BMI", mean).by("Age");
-//        Plot.show(
-//                HorizontalBarPlot.create(
-//                        " Average BMI by Age",	     	// plot title
-//                        bmiAverage,				            // Calculated averages of the BIM
-//                        "Age",					// grouping column name
-//                        "mean [BMI]"));
-//
-//
-//       //Using Pie Chart to showcase average age by IBM
-//        Plot.show(
-//                PiePlot.create("Average BMI by age", ageAverage, "BMI", "mean [AGE]"));
+        //Trend myTrend = new Trend();
+        Table bitconPriceData = Table.read().csv("/Users/m-store/eclipse-workspace/DataAnalysis/Bitcoin-usd.csv");
+        Table bitprice = bitconPriceData.structure();
+        System.out.println(bitprice);
+
+        //Time series data trend Analysis
+        // create(title, TableData, key Features x & y axis).
+        // Plot.show prints out the plot
+        Plot.show(TimeSeriesPlot
+                .create("Bitcoin Exchange Prices in USD", bitconPriceData, "Date", "High"));
+
+         /*
+         * Visualizing different data forms
+         * Text (Word cloud)
+         * Number (bar charts)
+         */
+
+         //Creating Bar Charts
+        Table diabetesData = Table.read().csv("/Users/m-store/eclipse-workspace/DataAnalysis/diabetes.csv");
+        Table diabetes = diabetesData.structure();
+        System.out.println(diabetes);
+        Table ageAverage = diabetesData.summarize("Age", mean).by("Outcome");
+        Plot.show(
+                HorizontalBarPlot.create(
+                        " Average Age by Outcome",		    // plot title
+                        ageAverage,				                // Calculated averages of the age
+                        "Outcome",					// grouping column name
+                        "mean [Age]"));
+
+         //Showcase AVG BMI by Age
+        Table bmiAverage = diabetesData.summarize("BMI", mean).by("Age");
+        Plot.show(
+                HorizontalBarPlot.create(
+                        " Average BMI by Age",	     	// plot title
+                        bmiAverage,				            // Calculated averages of the BIM
+                        "Age",					// grouping column name
+                        "mean [BMI]"));
+
+
+       //Using Pie Chart to showcase average age by IBM
+        Plot.show(
+                PiePlot.create("Average BMI by age", ageAverage, "BMI", "mean [AGE]"));
 		/*
 		 * Visualizing words using word cloud
 		 */
