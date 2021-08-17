@@ -1,6 +1,7 @@
 package dataHandling;
 
 import smile.math.distance.CorrelationDistance;
+import tech.tablesaw.api.DoubleColumn;
 import tech.tablesaw.api.NumberColumn;
 import tech.tablesaw.api.Table;
 import static tech.tablesaw.aggregate.AggregateFunctions.*;
@@ -21,7 +22,7 @@ public class DataStatistcAnalysis {
 	 * Correlation is a statistical measure that expresses the extent to which two variables are linearly related
 	 * @param x an array of data feature
 	 * @param y an array of data feature
-	 * @return correlation coefficient which = 1 - the correlation between 2 features
+	 * @return correlation coefficient which is the (1 - the correlation between 2 features).
 	 */
 	public static double getCorrelation(double [] x, double []y) {
 		CorrelationDistance correlationDistance = new CorrelationDistance();
@@ -67,6 +68,17 @@ public class DataStatistcAnalysis {
 		// dropping the sex Column and creating a heatmap
 		Figure theHeatMap = Heatmap.create("Correlation of the different variables ", diabetesData, "Age", "Bmi");
 		Plot.show(theHeatMap);
+
+		/*
+		 * correlation coefficient using the Smile library.
+		 */
+		DoubleColumn theAge = (DoubleColumn) diabetesData.nCol("Age");
+		DoubleColumn theBMI = (DoubleColumn) diabetesData.nCol("BMI");
+		System.out.println("Lets print the correlation btween Age and BMI!..");
+		System.out.println("Age & BMI ="+ getCorrelation(theAge.asDoubleArray(), theBMI.asDoubleArray()));
+
+
+
 
 	}
 
