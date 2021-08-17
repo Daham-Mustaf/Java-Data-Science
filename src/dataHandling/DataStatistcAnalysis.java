@@ -14,14 +14,15 @@ import tech.tablesaw.plotly.components.Figure;
 
 public class DataStatistcAnalysis {
 
+	public DataStatistcAnalysis() {
+	}
+
 	/**
 	 * Correlation is a statistical measure that expresses the extent to which two variables are linearly related
 	 * @param x an array of data feature
 	 * @param y an array of data feature
 	 * @return correlation coefficient which = 1 - the correlation between 2 features
 	 */
-	public DataStatistcAnalysis() {
-	}
 	public static double getCorrelation(double [] x, double []y) {
 		CorrelationDistance correlationDistance = new CorrelationDistance();
 		return 1-(correlationDistance.pearson(x,y));
