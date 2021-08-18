@@ -46,7 +46,6 @@
     <orderEntry type="library" name="Maven: com.github.fommil.netlib:netlib-native_system-win-x86_64:natives:1.1" level="project" />
     <orderEntry type="library" name="Maven: com.github.fommil.netlib:netlib-native_system-win-i686:natives:1.1" level="project" />
     <orderEntry type="library" name="Maven: net.sourceforge.f2j:arpack_combined_all:0.1" level="project" />
-    <orderEntry type="library" name="Maven: com.aspose:aspose-cells:jdk17:version of aspose-cells API" level="project" />
     <orderEntry type="library" name="Maven: com.github.haifengl:smile-plot:1.5.2" level="project" />
     <orderEntry type="library" name="Maven: org.swinglabs:swingx:1.6.1" level="project" />
     <orderEntry type="library" name="Maven: com.jhlabs:filters:2.0.235" level="project" />
@@ -77,5 +76,10 @@
     <orderEntry type="library" name="Maven: org.languagetool:language-zh:2.5" level="project" />
     <orderEntry type="library" name="Maven: com.googlecode.ictclas4j:ictclas4j:1.0.1" level="project" />
     <orderEntry type="library" name="Maven: com.google.code:cjftransform:1.0.1" level="project" />
+    <orderEntry type="library" name="Maven: com.opencsv:opencsv:4.1" level="project" />
+    <orderEntry type="library" name="Maven: org.apache.commons:commons-text:1.1" level="project" />
+    <orderEntry type="library" name="Maven: commons-beanutils:commons-beanutils:1.9.3" level="project" />
+    <orderEntry type="library" name="Maven: commons-logging:commons-logging:1.2" level="project" />
+    <orderEntry type="library" name="Maven: commons-collections:commons-collections:3.2.2" level="project" />
   </component>
 </module>

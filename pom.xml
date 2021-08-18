@@ -45,6 +45,12 @@
 			<artifactId>kumo-tokenizers</artifactId>
 			<version>1.17</version>
 		</dependency>
+		<dependency>
+			<!-- Word Cloud dependency (opencsv) -->
+			<groupId>com.opencsv</groupId>
+			<artifactId>opencsv</artifactId>
+			<version>4.1</version>
+		</dependency>
 	</dependencies>
 
 	<build>
