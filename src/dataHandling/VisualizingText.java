@@ -13,13 +13,16 @@ import com.kennycason.kumo.font.scale.SqrtFontScalar;
 import com.kennycason.kumo.nlp.FrequencyAnalyzer;
 import com.kennycason.kumo.palette.ColorPalette;
 
-public class VisualizingText {
+import javax.swing.*;
+
+public class VisualizingText extends JPanel {
 	/*
 	 * generate a circular Word Cloud. A tag cloud (word cloud or weighted list in
 	 * visual design) is a visual representation of text data, typically used to
 	 * visualize free form text. Tags are usually single words, and the importance
 	 * of each tag is shown with font size or color
 	 */
+
 
 	public static void main(String[] args) throws IOException {
 		final FrequencyAnalyzer fA = new FrequencyAnalyzer();
