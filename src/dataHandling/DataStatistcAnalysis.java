@@ -77,9 +77,6 @@ public class DataStatistcAnalysis {
 		System.out.println("Lets print the correlation btween Age and BMI!..");
 		System.out.println("Age & BMI ="+ getCorrelation(theAge.asDoubleArray(), theBMI.asDoubleArray()));
 
-
-
-
 	}
 
 }

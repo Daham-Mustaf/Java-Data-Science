@@ -46,6 +46,7 @@
     <orderEntry type="library" name="Maven: com.github.fommil.netlib:netlib-native_system-win-x86_64:natives:1.1" level="project" />
     <orderEntry type="library" name="Maven: com.github.fommil.netlib:netlib-native_system-win-i686:natives:1.1" level="project" />
     <orderEntry type="library" name="Maven: net.sourceforge.f2j:arpack_combined_all:0.1" level="project" />
+    <orderEntry type="library" name="Maven: com.aspose:aspose-cells:jdk17:version of aspose-cells API" level="project" />
     <orderEntry type="library" name="Maven: com.github.haifengl:smile-plot:1.5.2" level="project" />
     <orderEntry type="library" name="Maven: org.swinglabs:swingx:1.6.1" level="project" />
     <orderEntry type="library" name="Maven: com.jhlabs:filters:2.0.235" level="project" />

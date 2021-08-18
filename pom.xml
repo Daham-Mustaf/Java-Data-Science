@@ -1,6 +1,6 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0"
-		 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-		 xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>DataAnalysis</groupId>
 	<artifactId>DataAnalysis</artifactId>
@@ -18,34 +18,33 @@
 			<artifactId>tablesaw-jsplot</artifactId>
 			<version>0.25.2</version>
 		</dependency>
-		<!-- Adding Smile dependencies to help with Analytics, ML advanced -->
-		<dependency>
-			<groupId>com.github.haifengl</groupId>
-			<artifactId>smile-core</artifactId>
-			<version>1.5.2</version>
-		</dependency>
-		<dependency>
-			<groupId>com.github.haifengl</groupId>
-			<artifactId>smile-netlib</artifactId>
-			<version>1.5.2</version>
-		</dependency>
-		<dependency>
-			<groupId>com.github.haifengl</groupId>
-			<artifactId>smile-plot</artifactId>
-			<version>1.5.2</version>
-		</dependency>
-		<!-- Word Cloud dependency (KUMO)-->
-   <dependency>
-	    <groupId>com.kennycason</groupId>
-	    <artifactId>kumo-core</artifactId>
-	    <version>1.17</version>
-	</dependency>
+		<!-- Adding Smile dependencies to help with Analytics, ML etc advanced -->
 	<dependency>
-	    <groupId>com.kennycason</groupId>
-	    <artifactId>kumo-tokenizers</artifactId>
-	    <version>1.17</version>
-	</dependency>
-		
+      	<groupId>com.github.haifengl</groupId>
+      	<artifactId>smile-core</artifactId>
+      	<version>1.5.2</version>
+    </dependency>
+    <dependency>
+      	<groupId>com.github.haifengl</groupId>
+      	<artifactId>smile-netlib</artifactId>
+      	<version>1.5.2</version>
+    </dependency>
+    <dependency>
+      	<groupId>com.github.haifengl</groupId>
+      	<artifactId>smile-plot</artifactId>
+      	<version>1.5.2</version>
+    </dependency>
+		<!-- Word Cloud dependency (KUMO) -->
+		<dependency>
+			<groupId>com.kennycason</groupId>
+			<artifactId>kumo-core</artifactId>
+			<version>1.17</version>
+		</dependency>
+		<dependency>
+			<groupId>com.kennycason</groupId>
+			<artifactId>kumo-tokenizers</artifactId>
+			<version>1.17</version>
+		</dependency>
 	</dependencies>
 
 	<build>
