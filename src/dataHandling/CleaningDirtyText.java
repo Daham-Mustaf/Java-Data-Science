@@ -30,8 +30,8 @@ public class CleaningDirtyText {
 
 	private static void validateInt(String test) {
 		/*
-		 * Sometimes we simply need to validate whether a piece of data is of a specific
-		 * type, such as integer or floating point data.
+		 * Sometimes need to validate whether a piece of data is of a specific
+		 * type, such as integer or floating point data or not.
 		 */
 
 		try {
