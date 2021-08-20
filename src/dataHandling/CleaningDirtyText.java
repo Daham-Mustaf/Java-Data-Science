@@ -1,34 +1,27 @@
 package dataHandling;
 
-public class CleaningDirtyText {
-	private static final String dirtyText = "this*is#a*&very_dirty&String";
+public class CleaningData {
 
-	public static void main(String[] args) {
-		validateInt("1234");
-		validateInt("Ishmael");
-		cleaningText(dirtyText);
+	public CleaningData(){}
 
-	}
-
-	private static void cleaningText(String dirtytext2) {
+	public void cleaninText(String dirtytext){
 		/*
 		 * remove leading and trailing spaces, and split our words into a String array.
 		 * The split method allows you to break apart text on a given delimiter. In this
 		 * case, we chose to use the regular expression \\W, which represents anything
 		 * that is not a word character:
 		 */
-		System.out.println(dirtyText);
-		String[] words = dirtyText.toLowerCase().trim().split("[\\W\\d]+");
+		//System.out.println(dirtytext);
+		String[] words = dirtytext.toLowerCase().trim().split("[\\W\\d]+");
 		for (int i = 0; i < words.length; i++) {
-			System.out.print(words[i]);
+			//System.out.print(words[i]);
 		}
-		System.out.println("\nsee the cleaned text:-");
+		System.out.println("the cleaned text:-");
 		for (String clean : words) {
 			System.out.print(clean + " ");
 		}
 	}
-
-	private static void validateInt(String test) {
+	public void validateInt(String test) {
 		/*
 		 * Sometimes need to validate whether a piece of data is of a specific
 		 * type, such as integer or floating point data or not.
@@ -42,4 +35,25 @@ public class CleaningDirtyText {
 
 		}
 	}
+	public String cleanText(String text){
+//		text = text.replaceAll("[^p{ASCII}]","");
+//		text = text.replaceAll("s+", " ");
+//		text = text.replaceAll("p{Cntrl}", "");
+//		text = text.replaceAll("[^p{Print}]", "");
+//		text = text.replaceAll("p{C}", "");
+		return text;
+	}
+
+
+
+
+public static void main(String[] args) {
+		CleaningData cleaningDirtyText = new CleaningData();
+		final String dirtyText = "this*is#a*&very_dirty&String";
+		cleaningDirtyText.validateInt("1234");
+		cleaningDirtyText.validateInt("Ishmael");
+		cleaningDirtyText.cleaninText(dirtyText);
+	}
 }
+
+
