@@ -190,6 +190,6 @@ public class DataObject {
 
 		// Incase of Arrays with Int to double
 		int[] age = { 30, 12, 14, 41, 20, 80 };
-		double[] double_age = Arrays.stream(age).asDoubleStream().toArray();
+		double[] double_age = Arrays.stream(age).asDoubleStream().toArray()
 	}
 }

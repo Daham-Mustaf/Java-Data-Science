@@ -49,9 +49,11 @@ public class CleaningData {
 
 public static void main(String[] args) {
 		CleaningData cleaningDirtyText = new CleaningData();
+		// "this*is#a*&very_dirty&String@ R %";
 		final String dirtyText = "this*is#a*&very_dirty&String";
-		cleaningDirtyText.validateInt("1234");
-		cleaningDirtyText.validateInt("Ishmael");
+		System.out.println(dirtyText+ "dirtyText");
+//		cleaningDirtyText.validateInt("1234");
+//		cleaningDirtyText.validateInt("Ishmael");
 		cleaningDirtyText.cleaninText(dirtyText);
 	}
 }
