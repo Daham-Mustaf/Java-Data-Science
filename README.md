@@ -301,7 +301,8 @@ public class DataObject {
 	}
 }
 ```
-## Tablesaw: <a name="Kumo"></a> 
+
+## Kumo: <a name="Kumo"></a> 
 Kumo's goal is to create a powerful and user friendly Word Cloud API in Java. Kumo directly generates an image file without the need to create an applet as many other libraries do.
 [Kumo](https://github.com/kennycason/kumo)
 ```java
